@@ -16,12 +16,30 @@ function getResult(a,b,c){
    }
 };
 
-function getAverageMark(marks){
-    // код для задачи №2 писать здесь
-    return (averageMark);
+function getAverageMark(marks) {
+   let sum = 0;
+   let marksOverlay = marks.slice(0, 5);
+   for (let i = 0; i < marksOverlay.length; i++) {
+   	   sum += marks[i];
+      }
+    let averageMark = sum / marksOverlay.length;
+  
+     if (marks.length > 5) {
+    console.log('Введено ' + marks.length + ' оценок, средний балл будет вычислен для первых 5');
+    }
+    
+   else if (marks.length === 0) {
+     return(0);
+   }
+   return(averageMark);
 }
+
+
+
+
 
 function askDrink(name,dateOfBirthday){
     // код для задачи №3 писать здесь
-    // return result;
+    return (result);
 }
+
