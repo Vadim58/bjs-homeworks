@@ -14,7 +14,7 @@ function getResult(a,b,c){
    else {
     return (x);
    }
-};
+}
 
 function getAverageMark(marks) {
    let sum = 0;
@@ -32,17 +32,47 @@ function getAverageMark(marks) {
      return(0);
    }
    return(averageMark);
-function getAverageMark(marks){
-    // код для задачи №2 писать здесь
-    return (averageMark);
 }
 
 
 
 
-
+/*
 function askDrink(name,dateOfBirthday){
-    // код для задачи №3 писать здесь
-    return (result);
+  
+  let  age;
+       dateOfBirthday = {
+  	   day,                          ---------------------//НЕ МОГУ ПОНЯТЬ КАКИМ ОБРАЗОМ ОБРАТИТЬСЯ К ОБЪЕКТУ dateOfBirthday, ЧТОБЫ ВЫЧИСЛИТЬ КОЛИЧЕСТВО ПОЛНЫХ ЛЕТ, У МАССИВА Я ПРОСТО 
+  	   month,                        ------------------------МОГУ ПЕРЕБИРАТЬ ЕГО ЭЛЕМЕНТЫ ПО-ПОРЯДКУ, А КАК ОБРАТИТЬСЯ К СВОЙСТВУ И КЛЮЧУ ОБЪЕКТА, ЕСЛИ Я НЕ ЗНАЮ ИХ ИМЕН? ИЛИ ЭТО МАССИВ?                       
+  	   year,
+  };
+     
+     function getFullYear() {
+  
+         
+    let newDate = {
+     day: 26,
+     month: 9,
+     year: 2021,
+   };
+
+if ((newDate.month > dateOfBirthday.month) || ((newDate.month === dateOfBirthday.month) && (newDate.day === dateOfBirthday.day)) || ((newDate.month === dateOfBirthday.month) && (newDate.day > dateOfBirthday.day))) {
+  age = newDate.year -  dateOfBirthday.year;
+}                                                             //УСЛОВИЯ ВРОДЕ ВЕРНЫЕ, НО КАК ВЫТАЩИТЬ ЗНАЧЕНИЕ ГОДА, МЕСЯЦА И ДНЯ ИЗ АРГУМЕНТА dateOfBirthday НЕ МОГУ ДОГАДАТЬСЯ
+else {
+  age = newDate.year - dateOfBirthday.year - 1;
 }
 
+console.log(age);
+ return (age);
+     }
+getFullYear();                                  
+    if (age > 18) {
+    	console.log('Достаточно взрослый, ' + name);
+    }
+    else {
+    	console.log('Гуляй, ' + name);
+    }
+
+
+}
