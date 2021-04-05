@@ -32,6 +32,9 @@ function getAverageMark(marks) {
      return(0);
    }
    return(averageMark);
+function getAverageMark(marks){
+    // код для задачи №2 писать здесь
+    return (averageMark);
 }
 
 
