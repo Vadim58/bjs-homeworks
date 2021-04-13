@@ -25,10 +25,9 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
    	return (`Параметр <date> содержит неправильное значение <${date}>`);
    } 
    else { 
-    
-   let payment = defaultAmount * (percentRate + percentRate / ((Math.pow((1 + percentRate), numberOfMonths)) - 1));
-   let totalAmount = payment * numberOfMonths;
-   return Number(totalAmount.toFixed(2));
+     let payment = defaultAmount * (percentRate + percentRate / ((Math.pow((1 + percentRate), numberOfMonths)) - 1));
+     let totalAmount = payment * numberOfMonths;
+     return Number(totalAmount.toFixed(2));
  }
 }
 
