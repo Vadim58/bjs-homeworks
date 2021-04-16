@@ -58,6 +58,10 @@ let totalSum = 0;
       result[disciple] = getAverageMark(mark);
     } 
 }
+    if (k == 0) {
+      result.average = 0;
+      return result;
+    }
     
     if (k > 9) {
       return 'Недопустимое количество предметов';
