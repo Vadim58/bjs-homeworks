@@ -6,7 +6,7 @@ function getSolutions (a, b, c) {
 	if (d < 0) {
 		return {
 		 D: d,
-		 roots: [] 
+		 roots: [], 
 	    	}
 	}
 	else if (d === 0) {
@@ -40,4 +40,42 @@ function showSolutionsMessage(a, b, c) {
        else if (result.D < 0) {
          console.log (`Уравнение не имеет вещественных корней`);
        }
+}
+
+//=====================================================================================================================================================
+
+function getAverageScore(data) {
+let result = {};
+let average;
+let k = 0;
+let disciple;
+let totalSum = 0;
+    for (disciple in data) {
+      let mark = data[disciple];
+      if (getAverageMark(mark) > 0){
+      k++;
+      totalSum += (getAverageMark(mark));
+      result[disciple] = getAverageMark(mark);
+    } 
+}
+    
+    if (k > 9) {
+      return 'Недопустимое количество предметов';
+    }
+      average = totalSum / k;
+      result.average = average; 
+      return result;
+}
+
+function getAverageMark(marks) {
+  let sum = 0;
+  let averageRate = 0;
+  for (let i = 0; i < marks.length; i++) {
+    sum += marks[i];  
+  }
+  if (marks.length == 0) {
+     return sum = 0;
+  }
+  averageRate = sum / marks.length;
+  return averageRate;
 }
