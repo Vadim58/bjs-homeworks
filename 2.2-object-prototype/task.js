@@ -20,6 +20,5 @@ function getAverageMark(marks) {
    return Math.round(averageRate);
 }
 
-function checkBirthday(birthday) {
-   let data = new Date;
+
 
