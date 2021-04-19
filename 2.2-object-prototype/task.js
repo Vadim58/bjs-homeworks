@@ -1,11 +1,11 @@
  String.prototype.isPalindrome = function () {
   
-  let a = this;
-  let trimmer = a.trim();
-  
-  
-  
-  console.log(a.split(' ').join('').split('').reverse().join('').trim() === a.split(' ').join(''));
+  if (this.split(' ').join('').split('').reverse().join('').trim().toLowerCase() === this.split(' ').join('').trim().toLowerCase()) {
+      return String;
+  }
+
+  else return !String;
+ 
 
 }
 
