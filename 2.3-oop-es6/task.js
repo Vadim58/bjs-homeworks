@@ -5,19 +5,23 @@ class PrintEditionItem {
      this.pagesCount = pagesCount;
      }
      type = null;
-    
      fix() {
+     	    if (this.state * 1.5 <= 100) {
            return this.state * 1.5;
     }
+    else if (this.state * 1.5 > 100) {
+    	return 100;
+    }
+}
    set state(arg) {
               if (arg < 0) {
               	this._state = 0;
                 }
 
-                if (arg * 1.5 > 100) {
+                if (arg > 100) {
                 	this._state = 100;
                 }
-                if (arg * 1.5 > 0 && arg * 1.5 <= 100) {
+                if (arg > 0 && arg <= 100) {
                 	this._state = arg;
                 }
               }
@@ -27,6 +31,12 @@ class PrintEditionItem {
 	}
 }
 
+const books = new PrintEditionItem ('tolstoy', 1902, 300);
+books.state = 100;
+console.log(books.state);
+console.log(books.fix());
+
+
 class Magazine extends PrintEditionItem {
 	constructor (name, releaseDate, pagesCount) {
 	super (name, releaseDate, pagesCount);
@@ -35,7 +45,7 @@ class Magazine extends PrintEditionItem {
 }
 
 class Book extends PrintEditionItem {
-	constructor (name, releaseDate, pagesCount, author) {
+	constructor (author, name, releaseDate, pagesCount) {
       super (name, releaseDate, pagesCount);
       this.author = author;
       this.type = 'book';
@@ -61,3 +71,12 @@ class Book extends PrintEditionItem {
  	}
  }
  
+
+ class Library {
+ 	constructor (name) {
+ 		this.name = name;
+ 	}
+ 	books = [];
+ 	addBook(book)
+
+ }
