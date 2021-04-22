@@ -77,6 +77,13 @@ class Book extends PrintEditionItem {
  		this.name = name;
  	}
  	books = [];
- 	addBook(book)
+ 	addBook(book) {
+ 		if (book.state > 30) {
+ 			this.books.push(book);
+ 		}
 
+ 	}
+   
  }
+
+ const library = new Library("Библиотека имени Ленина");
