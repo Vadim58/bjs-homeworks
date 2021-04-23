@@ -8,10 +8,10 @@ function parseCount(item) {
 
 function validateCount(item) {
 	  try {
-            return parseCount(item);
+         return parseCount(item);
 	  } 
 	  catch(inValid) {
-	  	    return inValid; 
+	  	   return inValid; 
    }
 }
 
@@ -25,7 +25,7 @@ class Triangle {
           throw error;
 		}
 	}
-    getPerimeter() {
+  getPerimeter() {
     	let x = this.a + this.b + this.c;
     	return x;
     	console.log(x);
@@ -41,11 +41,11 @@ function getTriangle(a, b, c) {
 		return new Triangle(a, b, c);
 	}
 	catch(alarm) {
-         return alarm = {
-         	getPerimeter: function () {
+     return alarm = {
+        getPerimeter: function () {
          		return "Ошибка! Треугольник не существует";
          	},
-         	getArea: function () {
+      	getArea: function () {
          		return "Ошибка! Треугольник не существует";
          	},
          };
