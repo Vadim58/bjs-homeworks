@@ -47,7 +47,7 @@ function getTriangle(a, b, c) {
          	},
       	getArea: function () {
          		return "Ошибка! Треугольник не существует";
-         	},
-         };
+      },
+    };
 	}
 }
