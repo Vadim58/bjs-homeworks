@@ -43,10 +43,10 @@ function getTriangle(a, b, c) {
 	catch(alarm) {
          return alarm = {
          	getPerimeter: function () {
-         		return "Ошибка! Треугольник не существует"
+         		return "Ошибка! Треугольник не существует";
          	},
          	getArea: function () {
-         		return "Ошибка! Треугольник не существует"
+         		return "Ошибка! Треугольник не существует";
          	},
          };
 	}
