@@ -8,12 +8,7 @@ class PrintEditionItem {
      }
      
  fix() {
-  if (this.state * 1.5 <= 100) {
-   return this.state * 1.5;
- }
-  else if (this.state * 1.5 > 100) {
-   	return 100;
-  }
+  this.state *= 1.5;
 }
  set state(arg) {
    if (arg < 0) {
@@ -32,11 +27,6 @@ class PrintEditionItem {
 	return this._state;
  }
 }
-
-const books = new PrintEditionItem ('tolstoy', 1902, 300);
-books.state = 45;
-console.log(books.state);
-console.log(books.fix());
 
 
 class Magazine extends PrintEditionItem {
@@ -86,15 +76,29 @@ class Book extends PrintEditionItem {
    }
     findBookBy (type, value) {
      for (let i = 0; i < this.books.length; i++) {
-      if (this.books[i].type === value) {
+      if (this.books[i][type] === value) {
     		return this.books[i];
     }
-   	else {
-    return null;
-   }
+   	
   }
+  return null;
  }
    
+giveBookByName (bookName) {
+	let prop;
+	for (let i = 0; i < this.books.length; i++) {
+		for (prop in this.books[i]) {
+			if (this.books[i][prop] === bookName) {
+                return this.books[i]; 
+                delete this.books[i];      
+			}
+			
+		}
+
+	 
+	}
+	return null;
+  }
 }
 
 
