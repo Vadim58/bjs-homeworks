@@ -63,7 +63,6 @@ class Book extends PrintEditionItem {
  }
 }
  
-
  class Library {
   constructor (name) {
  	this.name = name;
@@ -78,28 +77,26 @@ class Book extends PrintEditionItem {
      for (let i = 0; i < this.books.length; i++) {
       if (this.books[i][type] === value) {
     		return this.books[i];
-    }
-   	
+    }	
   }
   return null;
  }
    
 giveBookByName (bookName) {
 	let prop;
+	let foundBook;
 	for (let i = 0; i < this.books.length; i++) {
-		for (prop in this.books[i]) {
-			if (this.books[i][prop] === bookName) {
-                return this.books[i]; 
-                delete this.books[i];      
-			}
-			
-		}
-
-	 
+			if (this.books[i].name === bookName) {
+        foundBook = this.books[i]; 
+        this.books.splice(i, 1);         
+		}	
 	}
-	return null;
+	if (foundBook === undefined) {
+       return null;
+	}
+	else {
+		return foundBook;
+	  }
   }
 }
-
-
 
