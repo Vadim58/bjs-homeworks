@@ -27,8 +27,8 @@ function getReliableWeaponsNames(durabilityValue) {
     for (let i = 0; i < weapons.length; i++) {
    	  if (weapons[i].durability > durabilityValue) {
         reliableWeaponsNames.push(weapons[i].name); 
-   	}
-  }
+     }
+   }
   return reliableWeaponsNames;
 }
 function getTotalDamage() {
