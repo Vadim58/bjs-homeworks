@@ -2,7 +2,7 @@ const weapons = [new Knife(), new Staff(), new Axe(), new StormStaff(), new Long
 function getNames () {
   let weaponName = [];
   for (let i = 0; i < weapons.length; i++) {
-	weaponName.push(weapons[i].name);
+    weaponName.push(weapons[i].name);
   }
   return weaponName;
 }
