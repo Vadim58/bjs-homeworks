@@ -1,4 +1,4 @@
-const compareArrays = (arr1, arr2) => {if (arr1.length === arr2.length && arr1.every(function(value, index) { return value === arr2[index]}))
+const compareArrays = (arr1, arr2) => {if (arr1.length === arr2.length && ''+arr1 === ''+arr2)
  return true; 
  else {
  	return false
@@ -16,12 +16,29 @@ function memorize(fn,limit) {
     result: 4
   }
 ];
+const obj = memory.find(item => item.args);
 
+ return (...someArgs) => { if (compareArrays(obj.args, [...someArgs])) 
+ 	return obj.result; 
+ 	    {
+ 	  	  
+ 	  	memory.push(
+ 	  	     {
+ 	  		  args: [...someArgs],
+ 	  	      result: fn(...someArgs),
+ 	  	    }
 
- return (...someArgs) => { if (compareArrays(memory.find(item => item.args).args, [...someArgs])) console.log(fn(...someArgs));
-  console.log('вычислительный процесс обратился к объекту памяти');
+ 	  	 )
+ 	  	memory.splice(limit-1);
+ 	  	return fn(...someArgs);
+ 	  }
+     
   }
+
+
+
 }
-const resultFunction = memorize((a,b) => a + b);
+const resultFunction = memorize(((a,b) => a + b), 23);
 resultFunction(3,4);
 
+/*const subject = (arr) => memory.find(object => compareArrays(object.args, arr)*/ 
