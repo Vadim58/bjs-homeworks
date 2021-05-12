@@ -16,29 +16,18 @@ function memorize(fn,limit) {
     result: 4
   }
 ];
-const obj = memory.find(item => item.args);
-
- return (...someArgs) => { if (compareArrays(obj.args, [...someArgs])) 
- 	return obj.result; 
- 	    {
- 	  	  
- 	  	memory.push(
+const findObject = (arr) => memory.find(object => compareArrays(object.args, arr)); 
+ return (...someArgs) => { return findObject([...someArgs]).result;    	  	  
+	  	{memory.push(
  	  	     {
  	  		  args: [...someArgs],
  	  	      result: fn(...someArgs),
  	  	    }
-
  	  	 )
- 	  	memory.splice(limit-1);
- 	  	return fn(...someArgs);
- 	  }
-     
+ 	  	memory.splice(limit - 1);
+ 	  	return fn(...someArgs); 
   }
-
-
-
+ }
 }
 const resultFunction = memorize(((a,b) => a + b), 23);
 resultFunction(3,4);
-
-/*const subject = (arr) => memory.find(object => compareArrays(object.args, arr)*/ 
